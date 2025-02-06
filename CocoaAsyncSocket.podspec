@@ -17,15 +17,15 @@ Pod::Spec.new do |spec|
 
   spec.name         = "CocoaAsyncSocket"
   spec.version      = "1.0.0"
-  spec.summary      = "A short description of CocoaAsyncSocket."
+  spec.summary      = "An efficient and powerful asynchronous socket networking library for macOS and iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = "CocoaAsyncSocket is a fully asynchronous TCP and UDP socket communication library for macOS and iOS. 
+                       It supports IPv4, IPv6, TLS encryption, and provides powerful networking capabilities."
 
   spec.homepage     = "https://github.com/ismycho/myCocoaAsyncSocket"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -38,8 +38,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE.txt" }
+  # spec.license      = { :type => "MIT", :file => "LICENSE.txt" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -68,7 +68,7 @@ Pod::Spec.new do |spec|
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "13.0"
-  # spec.osx.deployment_target = "10.7"
+  # spec.osx.deployment_target = "10.13"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
   # spec.visionos.deployment_target = "1.0"
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
   spec.swift_version = "5.0"
-  spec.source_files  = "GitHub", "GitHub/**/*.{swift,h,m}"
+  spec.source_files  = "GitHub", "Source/**/*.{swift,h,m}"
   spec.exclude_files = "GitHub/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -130,7 +130,7 @@ Pod::Spec.new do |spec|
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # spec.requires_arc = true
+  spec.requires_arc = false
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"

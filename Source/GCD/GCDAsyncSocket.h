@@ -101,7 +101,7 @@ typedef NS_ERROR_ENUM(GCDAsyncSocketErrorDomain, GCDAsyncSocketError) {
 
 #pragma mark Configuration
 
-@property (atomic, weak, readwrite, nullable) id<GCDAsyncSocketDelegate> delegate;
+@property (atomic, assign, readwrite, nullable) id<GCDAsyncSocketDelegate> delegate;
 #if OS_OBJECT_USE_OBJC
 @property (atomic, strong, readwrite, nullable) dispatch_queue_t delegateQueue;
 #else
