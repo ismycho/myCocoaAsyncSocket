@@ -38,8 +38,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = { :type => "MIT", :file => "LICENSE.txt" }
-  # spec.license      = { :type => "MIT", :file => "LICENSE.txt" }
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -68,7 +68,7 @@ Pod::Spec.new do |spec|
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "13.0"
-  # spec.osx.deployment_target = "10.13"
+  # spec.osx.deployment_target = "10.10"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
   # spec.visionos.deployment_target = "1.0"

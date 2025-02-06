@@ -895,7 +895,7 @@ enum GCDAsyncSocketConfig
 	uint32_t flags;
 	uint16_t config;
 	
-	__weak id<GCDAsyncSocketDelegate> delegate;
+    __unsafe_unretained id<GCDAsyncSocketDelegate> delegate;
 	dispatch_queue_t delegateQueue;
 	
 	int socket4FD;
@@ -1670,7 +1670,7 @@ enum GCDAsyncSocketConfig
             int socketFD = self->socket4FD;
             dispatch_source_t acceptSource = self->accept4Source;
 			
-			__weak GCDAsyncSocket *weakSelf = self;
+            __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 			
             dispatch_source_set_event_handler(self->accept4Source, ^{ @autoreleasepool {
 			#pragma clang diagnostic push
@@ -1718,7 +1718,7 @@ enum GCDAsyncSocketConfig
             int socketFD = self->socket6FD;
             dispatch_source_t acceptSource = self->accept6Source;
 			
-			__weak GCDAsyncSocket *weakSelf = self;
+            __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 			
             dispatch_source_set_event_handler(self->accept6Source, ^{ @autoreleasepool {
 			#pragma clang diagnostic push
@@ -1934,7 +1934,7 @@ enum GCDAsyncSocketConfig
         int socketFD = self->socketUN;
         dispatch_source_t acceptSource = self->acceptUNSource;
 		
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
         dispatch_source_set_event_handler(self->acceptUNSource, ^{ @autoreleasepool {
 			
@@ -2341,7 +2341,7 @@ enum GCDAsyncSocketConfig
 		NSString *hostCpy = [host copy];
 		
         int aStateIndex = self->stateIndex;
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
 		dispatch_queue_t globalConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 		dispatch_async(globalConcurrentQueue, ^{ @autoreleasepool {
@@ -2735,7 +2735,7 @@ enum GCDAsyncSocketConfig
     
     // Start the connection process in a background queue
     
-    __weak GCDAsyncSocket *weakSelf = self;
+    __unsafe_unretained GCDAsyncSocket *weakSelf = self;
     
     dispatch_queue_t globalConcurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(globalConcurrentQueue, ^{
@@ -3127,7 +3127,7 @@ enum GCDAsyncSocketConfig
 	{
 		connectTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, socketQueue);
 		
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
 		dispatch_source_set_event_handler(connectTimer, ^{ @autoreleasepool {
 		#pragma clang diagnostic push
@@ -4258,7 +4258,7 @@ enum GCDAsyncSocketConfig
 	
 	// Setup event handlers
 	
-	__weak GCDAsyncSocket *weakSelf = self;
+    __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 	
 	dispatch_source_set_event_handler(readSource, ^{ @autoreleasepool {
 	#pragma clang diagnostic push
@@ -5788,7 +5788,7 @@ enum GCDAsyncSocketConfig
 	{
 		readTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, socketQueue);
 		
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
 		dispatch_source_set_event_handler(readTimer, ^{ @autoreleasepool {
 		#pragma clang diagnostic push
@@ -6431,7 +6431,7 @@ enum GCDAsyncSocketConfig
 	{
 		writeTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, socketQueue);
 		
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
 		dispatch_source_set_event_handler(writeTimer, ^{ @autoreleasepool {
 		#pragma clang diagnostic push
@@ -7366,7 +7366,7 @@ static OSStatus SSLWriteFunction(SSLConnectionRef connection, const void *data, 
 		int aStateIndex = stateIndex;
 		dispatch_queue_t theSocketQueue = socketQueue;
 		
-		__weak GCDAsyncSocket *weakSelf = self;
+        __unsafe_unretained GCDAsyncSocket *weakSelf = self;
 		
 		void (^comletionHandler)(BOOL) = ^(BOOL shouldTrust){ @autoreleasepool {
 		#pragma clang diagnostic push

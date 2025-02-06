@@ -147,7 +147,7 @@ enum GCDAsyncUdpSocketConfig
 @interface GCDAsyncUdpSocket ()
 {
 #if __has_feature(objc_arc_weak)
-	__weak id delegate;
+    __unsafe_unretained id delegate;
 #else
 	__unsafe_unretained id delegate;
 #endif
